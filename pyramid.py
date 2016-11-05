@@ -1,8 +1,7 @@
 from wsgiref.simple_server import make_server
 from jinja2 import Environment,FileSystemLoader
-from pyramid.response import Response
-from pyramid.config import Configurator
-
+from pyramid.response import *
+from pyramid.config import *
 enviroment=Environment(loader=FileSystemLoader("htmkfiles"))
 
 def Index(request):
@@ -26,3 +25,4 @@ if __name__ == "__main__":
     server = make_server("localhost", 8000, app)
     print ("Serving localhost on port 8000...")
     server.serve_forever()
+
